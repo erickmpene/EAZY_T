@@ -1,5 +1,5 @@
-kind: Deployment
 apiVersion: apps/v1
+kind: Deployment
 metadata:
    name: mysql-deployment
 spec:
@@ -27,5 +27,7 @@ spec:
                 mountPath: /var/lib/mysql
         volumes:
           - name: data-mysql-volume
-            emptyDir: {}
+            hostPath:
+              path: /data/mysql
+              type: Directory
 
