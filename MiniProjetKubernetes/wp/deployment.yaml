@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wp
+spec:
+  selector:
+    matchLabels:
+      app: wp
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: wp
+    spec:
+      containers:
+        - name: wordpress
+          image: wordpress:latest
+          ports:
+            - containerPort: 80
+          env:
+            - name: WORDPRESS_DB_HOST
+              value: mariadb
+            - name: WORDPRESS_DB_USER
+              value: wp_user
+            - name: WORDPRESS_DB_PASSWORD
+              value: mypassword
+            - name: WORDPRESS_DB_NAME
+              value: wordpress
+          volumeMounts:
+            - name: data-wp-volume
+              mountPath: /var/www/html/wp-content/uploads
+      volumes:
+        - name: data-wp-volume
+          hostPath:
+            path: /data/wordpress
+            type: Directory
+
+
+
