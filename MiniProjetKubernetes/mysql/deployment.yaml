@@ -20,6 +20,10 @@ spec:
                 value: D@rkV@Dor!
               - name: MYSQL_DATABASE
                 value: wordpress
+              - name: MYSQL_USER
+                value: wp_user
+              - name: MYSQL_PASSWORD
+                value: zerozero
             ports:
               - containerPort : 3306
             volumeMounts:

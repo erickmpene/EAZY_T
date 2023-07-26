@@ -19,16 +19,16 @@ spec:
             - containerPort: 80
           env:
             - name: WORDPRESS_DB_HOST
-              value: mariadb
+              value: mysql-service
             - name: WORDPRESS_DB_USER
               value: wp_user
             - name: WORDPRESS_DB_PASSWORD
-              value: mypassword
+              value: zerozero
             - name: WORDPRESS_DB_NAME
               value: wordpress
           volumeMounts:
             - name: data-wp-volume
-              mountPath: /var/www/html/wp-content/uploads
+              mountPath: /var/www/html/
       volumes:
         - name: data-wp-volume
           hostPath:
