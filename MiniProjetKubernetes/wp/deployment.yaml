@@ -19,13 +19,25 @@ spec:
             - containerPort: 80
           env:
             - name: WORDPRESS_DB_HOST
-              value: mysql-service
+              valueFrom: 
+                secretKeyRef:
+                  name: wp-secret
+                  key: WORDPRESS_DB_HOST 
             - name: WORDPRESS_DB_USER
-              value: wp_user
+              valueFrom: 
+                secretKeyRef:
+                  name: wp-secret
+                  key: WORDPRESS_DB_USER 
             - name: WORDPRESS_DB_PASSWORD
-              value: zerozero
+              valueFrom: 
+                secretKeyRef:
+                  name: wp-secret
+                  key: WORDPRESS_DB_PASSWORD
             - name: WORDPRESS_DB_NAME
-              value: wordpress
+              valueFrom: 
+                secretKeyRef:
+                  name: wp-secret
+                  key: WORDPRESS_DB_NAME
           volumeMounts:
             - name: data-wp-volume
               mountPath: /var/www/html/
