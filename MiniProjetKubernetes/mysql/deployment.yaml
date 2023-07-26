@@ -1,0 +1,31 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+   name: mysql-deployment
+spec:
+   replicas: 1
+   selector:
+      matchLabels:
+        app: mysql
+   template:
+      metadata:
+        labels:
+          app: mysql
+      spec:
+        containers:
+          - name : mysql
+            image: mysql:latest
+            env:
+              - name: MYSQL_ROOT_PASSWORD
+                value: D@rkV@Dor!
+              - name: MYSQL_DATABASE
+                value: wordpress
+            ports:
+              - containerPort : 3306
+            volumeMounts:
+              - name: data-mysql-volume
+                mountPath: /var/lib/mysql
+        volumes:
+          - name: data-mysql-volume
+            emptyDir: {}
+
