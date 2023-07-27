@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: wp-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: eazy.fr
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: wp-service
+            port:
+              number: 80
