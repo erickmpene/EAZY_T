@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
    name: wp-service
+   namespace: wordpress
 spec:
    selector:
       app: wp
