@@ -5,7 +5,7 @@ mkdir -p /data/{mysql,wordpress}
 ```
 
 #### 2. Create namespace
-First start by creating the namespace. The file is located in => "MiniProjetKubernetes/namespace/namespace.yaml"
+First start by creating the namespace. The file is located in => "MiniProjetKubernetes/namespace.yaml"
 ```sh
 kubectl apply -f namespace.yaml
 ```
