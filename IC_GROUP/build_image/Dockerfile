@@ -1,5 +1,5 @@
 FROM python:3.6-alpine
-LABEL EMAIL="erickmpene@gmail.com"
+LABEL EMAIL="sarkozy@gmail.com"
 
 ENV ODOO_URL https://odoo.comm
 ENV PGADMIN_URL: https://pgadmin.org
