@@ -15,3 +15,5 @@ Second you have to create the secret. The file is located in => "MiniProjetKuber
 ```sh
 kubectl apply -f secret.yaml
 ```
+
+#### For the ```ingress``` I used "ingressClassName: nginx"
