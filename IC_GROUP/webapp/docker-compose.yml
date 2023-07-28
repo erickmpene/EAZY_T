@@ -49,7 +49,7 @@ services:
       - pgadmin-data:/var/lib/pgadmin
   ic-webapp:
     image: erickmpene/ic-group:v1
-    container_name: test-ic-webapp
+    container_name: ic-webapp
     networks:
       - ic-group
     ports:
