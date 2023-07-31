@@ -32,11 +32,11 @@ spec:
             - name: PROVISIONER_NAME
               value: k8s-sigs.io/nfs-subdir-external-provisioner
             - name: NFS_SERVER
-              value: 10.10.10.1 # <= PUT YOUR NFS-SERVER IP
+              value: 10.10.10.10 # <= PUT YOUR NFS-SERVER IP
             - name: NFS_PATH
               value: /data/CKA
       volumes:
         - name: nfs-client-root
           nfs:
-            server: 10.10.10.1 # <= PUT YOUR NFS-SERVER IP
+            server: 10.10.10.10 # <= PUT YOUR NFS-SERVER IP
             path: /data/CKA

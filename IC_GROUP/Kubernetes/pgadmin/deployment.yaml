@@ -39,14 +39,18 @@ spec:
             - name: data-pgadmin
               mountPath: /var/lib/pgadmin
             - name: data-pgadmin4
-              mountPath: /pgadmin4
-
+              mountPath: /pgadmin4/servers.json
+              subPath: servers.json 
       volumes: 
         - name: data-pgadmin
           persistentVolumeClaim: 
             claimName: pvc-pgadmin
         - name: data-pgadmin4
-          persistentVolumeClaim: 
-            claimName: pvc-pgadmin4
+          configMap: 
+            name: pgadmin-configmap
+            items: 
+            - key: servers.json 
+              path: servers.json 
+
 
 

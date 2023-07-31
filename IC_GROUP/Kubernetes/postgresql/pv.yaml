@@ -15,4 +15,4 @@ spec:
     - nfsvers=4.1
   nfs:
     path: /data/CKA/postgresql
-    server: 10.10.10.1 # <= PUT YOUR NFS-SERVER IP
+    server: 10.10.10.10 # <= PUT YOUR NFS-SERVER IP
