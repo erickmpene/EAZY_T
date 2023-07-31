@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-webapp
+spec:
+  capacity:
+    storage: 5Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: nfs-client
+  mountOptions:
+    - hard
+    - nfsvers=4.1
+  nfs:
+    path: /data/CKA/webapp
+    server: 10.10.10.1 # <= PUT YOUR NFS-SERVER IP
